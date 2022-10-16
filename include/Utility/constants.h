@@ -14,6 +14,37 @@ typedef struct ColorPiece {
         piece(static_cast<Piece>(p))
     {}
 
+    ColorPiece(char c) {
+        if (c <= 90) color = WHITE;
+        else {
+            color = BLACK;
+            c -= 32; // convert to upper case
+        }
+        switch (c) {
+            case 'P':
+                piece = PAWN;
+                break;
+            case 'N':
+                piece = KNIGHT;
+                break;
+            case 'B':
+                piece = BISHOP;
+                break;
+            case 'R':
+                piece = ROOK;
+                break;
+            case 'Q':
+                piece = QUEEN;
+                break;
+            case 'K':
+                piece = KING;
+                break;
+            default:
+                piece = PIECE_ERROR;
+                color = COLOR_ERROR;
+        }
+    }
+
     char getSymbol() const {
 
         // null piece

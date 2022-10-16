@@ -8,15 +8,37 @@ class Game {
 
 public:
 
+    Game(std::string fen) {
+        current = new GameState(BoardState(fen));
+    }
+
+    Game() {
+        current = new GameState(BoardState());
+    }
+
     void makeMove(const Move& move);
     void unmakeMove();
+    const BoardState& getBoard() { return current->board; }
+
+    ~Game() {
+        while (current != nullptr) {
+            GameState* prev = current->prev;
+            delete current;
+            current = prev;
+        }
+    }
 
 private:
     typedef struct GameState {
         BoardState board;
         GameState* prev;
+        
+        GameState(BoardState b): board(b), prev(nullptr) {}
+
     } GameState;
 
     GameState* current;
+
+
 
 };

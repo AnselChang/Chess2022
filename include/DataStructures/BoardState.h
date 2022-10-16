@@ -8,15 +8,16 @@ class BoardState {
 
 public:
 
-    static BoardState empty() { return BoardState(); }
-    static BoardState newGame() { return BoardState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"); }
-
-    BoardState(std::string fen) {
+    BoardState(std::string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1") {
 
         int y = 7;
         int x = 0;
 
-        for (char c : fen) {
+        int i = 0;
+        // Calculate board position
+        while (i < fen.size() && fen.at(i) != ' ') {
+
+            char c = fen.at(i);
             if (c == '/') { // Go down one row
                 y--;
                 x = 0;
@@ -27,11 +28,32 @@ public:
                 pieces[cp.color][cp.piece].set(y*8 + x);
                 x += 1;
             }
+            i += 1;
         }
+
+        if (i == fen.size()) {
+            kingsideCastling = {true, true};
+            queensideCastling = {true, true};
+            turn = WHITE;
+        } else {
+
+            // Calculate who's turn
+            i++; // i now at w or b
+            turn = (fen.at(i) == 'w') ? WHITE : BLACK;
+            i++; // i now at castling
+
+            // Calculate castling
+            std::string castling = fen.substr(i, fen.find(" ", i)); // substring of just the castling portion
+            kingsideCastling[WHITE] = castling.find('K') != std::string::npos;
+            queensideCastling[WHITE] = castling.find('Q') != std::string::npos;
+            kingsideCastling[BLACK] = castling.find('k') != std::string::npos;
+            queensideCastling[BLACK] = castling.find('q') != std::string::npos;
+        }
+
         recalculateAll();
 
     }
-    BoardState() {}
+
 
     void recalculateAll() {
         all[WHITE] = pieces[WHITE][PAWN]; // copy by value
@@ -64,7 +86,12 @@ public:
                 os << boardState.pieceAt(y*8 + x) << " ";
             }
         }
-        os << std::endl;
+        os << "\n";
+        if (boardState.kingsideCastling[WHITE]) os << "K";
+        if (boardState.queensideCastling[WHITE]) os << "Q";
+        if (boardState.kingsideCastling[BLACK]) os << "k";
+        if (boardState.queensideCastling[BLACK]) os << "q";
+        os << "\n" << (boardState.turn == WHITE ? "White" : "Black") << " to move" << std::endl;
         return os;
     }
 
@@ -72,5 +99,9 @@ private:
 
     std::array<std::array<Bitboard, NUM_PIECES>, 2> pieces;
     std::array<Bitboard, 2> all;
+
+    Color turn;
+    std::array<bool, 2> queensideCastling;
+    std::array<bool, 2> kingsideCastling;
 
 };

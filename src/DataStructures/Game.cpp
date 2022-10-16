@@ -1,6 +1,7 @@
 #include "DataStructures/Game.h"
 #include <assert.h>
 
+// Precondition: assume that move is valid (check happened already)
 void Game::makeMove(const Move& move) {
     
     // create a copy of current gamestate for new gamestate

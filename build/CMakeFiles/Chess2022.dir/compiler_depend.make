@@ -846,8 +846,18 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/array \
   ../include/DataStructures/Bitboard.h \
   ../include/Utility/Bitwise.h \
-  ../include/Utility/constants.h
+  ../include/Utility/constants.h \
+  ../include/DataStructures/Game.h \
+  ../include/DataStructures/Move.h \
+  ../include/DataStructures/Square.h \
+  ../include/Algorithms/MoveGenerator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer
 
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector:
+
+../include/Algorithms/MoveGenerator.h:
 
 ../include/DataStructures/Move.h:
 
@@ -1222,6 +1232,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/utility:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/pthread/pthread_impl.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/pthread/sched.h:
 

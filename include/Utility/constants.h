@@ -48,7 +48,7 @@ typedef struct ColorPiece {
     char getSymbol() const {
 
         // null piece
-        if (color == COLOR_ERROR || piece == PIECE_ERROR) return '-';
+        if (color == COLOR_ERROR || piece == PIECE_ERROR) return '.';
 
         char c;
         switch (piece) {

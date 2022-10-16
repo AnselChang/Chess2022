@@ -419,4 +419,10 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/array \
   /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Bitboard.h \
   /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/Bitwise.h \
-  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/constants.h
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/constants.h \
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Game.h \
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Move.h \
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Square.h \
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Algorithms/MoveGenerator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer

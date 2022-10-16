@@ -5,7 +5,7 @@
 #include "DataStructures/Move.h"
 
 std::vector<Move> generateMoves(const BoardState& board) {
-    std::vector<Moves> moves;
+    std::vector<Move> moves;
 
     
 

@@ -11,10 +11,10 @@ BuildDirectory: /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/P
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: autoreg-3323396.dyn.wpi.edu
+Site: Ansels-MacBook-Air.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-clang++
+BuildName: Darwin-aarch64-apple-darwin20-g++-11
 
 # Subprojects
 LabelsForSubprojects: 
@@ -62,8 +62,8 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/clang++
-CompilerVersion: 13.0.0.13000027
+Compiler: /opt/homebrew/bin/aarch64-apple-darwin20-g++-11
+CompilerVersion: 11.2.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

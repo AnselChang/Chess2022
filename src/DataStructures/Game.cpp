@@ -13,7 +13,6 @@ void Game::makeMove(const Move& move) {
     // shift pointer over to new state
     newState->prev = current;
     current = newState;
-
 }
 
 // Pop the top of the linked list and shift back game state pointer by 1 to previous move

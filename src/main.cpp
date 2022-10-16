@@ -1,8 +1,8 @@
 #include <iostream>
 #include "DataStructures/BoardState.h"
-#include "DataStructures/Bitboard.h"
 #include "DataStructures/Game.h"
 #include "Algorithms/MoveGenerator.h"
+#include "Utility/Bitwise/tables.h"
 
 // Return the number of possible positions given a starting position and a depth
 long long perft(Game& game, int depth) {
@@ -27,12 +27,21 @@ void test_perft(int depth) {
 }
 
 int main() {
+
+    initLookupTables();
+
     //BoardState b;
     //std::cout << b << std::endl;
     //std::cout << "start" << std::endl;
     //BoardState b("rnb1kb1r/ppqppp2/2p3P1/8/7p/4P2P/PPQP2P1/RNB1KB1R w KQkq - 0 11");
     //std::cout << b << std::endl;
 
-    test_perft(3);
+    //test_perft(3);
+
+    Game game("rnbqkbnr/ppppp1p1/5p1p/8/8/2N1P3/PPPP1PPP/R1BQKBNR w KQkq - 0 3");
+    std::vector<Move> moves = generateMoves(game.getBoard());
+    for (const Move& move : moves) {
+        std::cout << move << std::endl;
+    }
     
 }

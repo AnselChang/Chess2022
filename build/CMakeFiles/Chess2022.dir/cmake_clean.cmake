@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o"
+  "CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o.d"
   "CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o"
   "CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o.d"
   "CMakeFiles/Chess2022.dir/src/main.cpp.o"

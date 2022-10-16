@@ -523,6 +523,30 @@ Chess2022/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess2022.dir/build.make CMakeFiles/Chess2022.dir/build
 .PHONY : Chess2022/fast
 
+src/DataStructures/BoardState.o: src/DataStructures/BoardState.cpp.o
+.PHONY : src/DataStructures/BoardState.o
+
+# target to build an object file
+src/DataStructures/BoardState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess2022.dir/build.make CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o
+.PHONY : src/DataStructures/BoardState.cpp.o
+
+src/DataStructures/BoardState.i: src/DataStructures/BoardState.cpp.i
+.PHONY : src/DataStructures/BoardState.i
+
+# target to preprocess a source file
+src/DataStructures/BoardState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess2022.dir/build.make CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.i
+.PHONY : src/DataStructures/BoardState.cpp.i
+
+src/DataStructures/BoardState.s: src/DataStructures/BoardState.cpp.s
+.PHONY : src/DataStructures/BoardState.s
+
+# target to generate assembly for a file
+src/DataStructures/BoardState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chess2022.dir/build.make CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.s
+.PHONY : src/DataStructures/BoardState.cpp.s
+
 src/DataStructures/Game.o: src/DataStructures/Game.cpp.o
 .PHONY : src/DataStructures/Game.o
 
@@ -611,6 +635,9 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... Chess2022"
+	@echo "... src/DataStructures/BoardState.o"
+	@echo "... src/DataStructures/BoardState.i"
+	@echo "... src/DataStructures/BoardState.s"
 	@echo "... src/DataStructures/Game.o"
 	@echo "... src/DataStructures/Game.i"
 	@echo "... src/DataStructures/Game.s"

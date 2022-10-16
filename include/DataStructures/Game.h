@@ -18,6 +18,7 @@ public:
 
     void makeMove(const Move& move);
     void unmakeMove();
+    
     const BoardState& getBoard() { return current->board; }
 
     ~Game() {

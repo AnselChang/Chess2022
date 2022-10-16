@@ -73,43 +73,59 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: CMakeFiles/Chess2022.dir/flags.make
 CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/Chess2022.dir/src/main.cpp.o: CMakeFiles/Chess2022.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Chess2022.dir/src/main.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess2022.dir/src/main.cpp.o -MF CMakeFiles/Chess2022.dir/src/main.cpp.o.d -o CMakeFiles/Chess2022.dir/src/main.cpp.o -c "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp"
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess2022.dir/src/main.cpp.o -MF CMakeFiles/Chess2022.dir/src/main.cpp.o.d -o CMakeFiles/Chess2022.dir/src/main.cpp.o -c "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp"
 
 CMakeFiles/Chess2022.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess2022.dir/src/main.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp" > CMakeFiles/Chess2022.dir/src/main.cpp.i
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp" > CMakeFiles/Chess2022.dir/src/main.cpp.i
 
 CMakeFiles/Chess2022.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess2022.dir/src/main.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp" -o CMakeFiles/Chess2022.dir/src/main.cpp.s
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp" -o CMakeFiles/Chess2022.dir/src/main.cpp.s
 
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o: CMakeFiles/Chess2022.dir/flags.make
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o: ../src/DataStructures/Game.cpp
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o: CMakeFiles/Chess2022.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o -MF CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o.d -o CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o -c "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp"
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o -MF CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o.d -o CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o -c "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp"
 
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp" > CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.i
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp" > CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.i
 
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp" -o CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.s
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp" -o CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.s
+
+CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o: CMakeFiles/Chess2022.dir/flags.make
+CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o: ../src/DataStructures/BoardState.cpp
+CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o: CMakeFiles/Chess2022.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o"
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o -MF CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o.d -o CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o -c "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/BoardState.cpp"
+
+CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.i"
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/BoardState.cpp" > CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.i
+
+CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.s"
+	/opt/homebrew/bin/aarch64-apple-darwin20-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/BoardState.cpp" -o CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.s
 
 # Object files for target Chess2022
 Chess2022_OBJECTS = \
 "CMakeFiles/Chess2022.dir/src/main.cpp.o" \
-"CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o"
+"CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o" \
+"CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o"
 
 # External object files for target Chess2022
 Chess2022_EXTERNAL_OBJECTS =
 
 Chess2022: CMakeFiles/Chess2022.dir/src/main.cpp.o
 Chess2022: CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o
+Chess2022: CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o
 Chess2022: CMakeFiles/Chess2022.dir/build.make
 Chess2022: CMakeFiles/Chess2022.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Chess2022"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Chess2022"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Chess2022.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

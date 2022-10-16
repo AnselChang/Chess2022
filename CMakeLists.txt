@@ -8,7 +8,7 @@ set (CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
 file(GLOB SRC_FILES "src/*.cpp")
-add_executable(Chess2022 src/main.cpp src/DataStructures/Game.cpp)
+add_executable(Chess2022 src/main.cpp src/DataStructures/Game.cpp src/DataStructures/BoardState.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

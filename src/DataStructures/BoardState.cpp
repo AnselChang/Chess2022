@@ -23,7 +23,7 @@ BoardState::BoardState(std::string fen) {
             x += c - 48;
         } else { // if a piece, figure out which color and piece it is, and set corresponding bit
             ColorPiece cp(c);
-            pieces[cp.color][cp.piece] = setOn(pieces[cp.color][cp.piece], y*8 + x);
+            setOn(pieces[cp.color][cp.piece], y*8 + x);
             x += 1;
         }
         i += 1;
@@ -82,9 +82,9 @@ ColorPiece BoardState::pieceAt(int index) const {
 }
 
 void BoardState::removePiece(ColorPiece cp, int location) {
-    pieces[cp.color][cp.piece] = setOff(pieces[cp.color][cp.piece], location);
+    setOff(pieces[cp.color][cp.piece], location);
 }
 
 void BoardState::addPiece(ColorPiece cp, int location) {
-    pieces[cp.color][cp.piece] = setOn(pieces[cp.color][cp.piece], location);
+    setOn(pieces[cp.color][cp.piece], location);
 }

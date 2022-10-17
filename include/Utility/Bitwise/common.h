@@ -11,18 +11,22 @@ static int get(uint64_t bb, int k) {
 }
 
 // Set the value of a bit at location k to 1. Slow for multiple bits; prefer other bitwise operations
-static uint64_t setOn(uint64_t bb, int k) {
-    return bb | (1ULL << k);
+static void setOn(uint64_t& bb, int k) {
+    bb |= (1ULL << k);
 }
 
 // Set the value of a bit at location k to 1. Slow for multiple bits; prefer other bitwise operations
-static uint64_t setOff(uint64_t bb, int k) {
-    return bb & ~(1UL << k);
+static void setOff(uint64_t& bb, int k) {
+    bb &= ~(1UL << k);
 }
 
 // get singly populated bitboard at location
 inline uint64_t getSingle(int k) {
-    return setOn(0ULL, k);
+    return 1ULL << k;
+}
+
+constexpr uint64_t getSingleC(int k) {
+    return 1ULL << k;
 }
 
 static void print(uint64_t bb) {

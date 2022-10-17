@@ -49,15 +49,15 @@ void initRay(Direction direction, int dx, int dy) {
    }
 };
 
-uint64_t queensideCastlingSquares[2] = {getSingle(1) + getSingle(2) + getSingle(3), getSingle(57) + getSingle(58) + getSingle(59)};
-uint64_t kingsideCastlingSquares[2] = {getSingle(5) + getSingle(6), getSingle(61) + getSingle(62)};
+const uint64_t queensideCastlingSquares[2] = {getSingle(1) + getSingle(2) + getSingle(3), getSingle(57) + getSingle(58) + getSingle(59)};
+const uint64_t kingsideCastlingSquares[2] = {getSingle(5) + getSingle(6), getSingle(61) + getSingle(62)};
 
-uint64_t defaultKing[2] = {4, 60};
+const uint64_t defaultKing[2] = {4, 60};
 
 void initLookupTables() {
 
    for (int i = 0; i < 64; i++) {
-      uint64_t square = setOn(0, i);
+      uint64_t square = getSingle(i);
       arrKnightAttacks[i] = knightAttacks(square);
       arrKingAttacks[i] = kingAttacks(square);
    }

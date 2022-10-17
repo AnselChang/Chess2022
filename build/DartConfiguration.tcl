@@ -14,7 +14,7 @@ CostDataFile:
 Site: Ansels-MacBook-Air.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-aarch64-apple-darwin20-g++-11
+BuildName: Darwin-clang++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -62,8 +62,8 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: /opt/homebrew/bin/aarch64-apple-darwin20-g++-11
-CompilerVersion: 11.2.0
+Compiler: /usr/bin/clang++
+CompilerVersion: 13.0.0.13000027
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

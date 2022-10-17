@@ -22,6 +22,8 @@ public:
     void removePiece(ColorPiece cp, int location);
     void addPiece(ColorPiece cp, int location);
 
+    std::array<uint64_t, NUM_PIECES>& myPieces() {return pieces[turn]; };
+
     // Overload printing
     friend std::ostream& operator<<(std::ostream& os, const BoardState& boardState) {
         

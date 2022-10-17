@@ -38,6 +38,5 @@ public:
         return os;
     }
 
-private:
     int id;
 };

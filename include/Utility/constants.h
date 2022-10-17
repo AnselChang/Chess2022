@@ -1,5 +1,7 @@
 #pragma once
 
+enum Direction {NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST};
+
 enum Piece {PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING, PIECE_ERROR};
 constexpr int NUM_PIECES = 6;
 

@@ -46,6 +46,7 @@ public:
     uint64_t epSquare; // en pessant square, for when previous move was a double pawn jump
 
     Color turn;
+    Color otherTurn;
     std::array<bool, 2> queensideCastling;
     std::array<bool, 2> kingsideCastling;
 

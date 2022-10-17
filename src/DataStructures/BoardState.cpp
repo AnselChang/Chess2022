@@ -38,6 +38,7 @@ BoardState::BoardState(std::string fen) {
         // Calculate who's turn
         i++; // i now at w or b
         turn = (fen.at(i) == 'w') ? WHITE : BLACK;
+        otherTurn = (Color) ((turn + 1) % 2);
         i++; // i now at castling
 
         // Calculate castling

@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include "common.h"
+#include "Utility/constants.h"
 
 uint64_t knightAttacks(uint64_t knights) {
    uint64_t west, east, attacks;
@@ -26,13 +27,45 @@ uint64_t kingAttacks(uint64_t kingSet) {
 }
 uint64_t arrKingAttacks[64];
 
+// Initialize rays from specified direction. Bruteforce
+uint64_t rayAttacks[8][64];
+void initRay(Direction direction, int dx, int dy) {
+   
+   for (int x=0; x<8; x++) { // iterate through all indicies of 2d array rays
+      for (int y=0; y<8; y++) {
+            int x0 = x + dx;
+            int y0 = y + dy;
+            uint64_t result = 0;
+            
+            while (x0 >= 0 && x0 < 8 && y0 >= 0 && y0 < 8) { // while in bounds
+               
+               result += getSingle(Square(x0, y0).id);
+               
+               x0 += dx;
+               y0 += dy;
+            }
+            rayAttacks[direction][Square(x, y).id] = result;
+      }
+   }
+};
+
+
 
 void initLookupTables() {
 
-    for (int i = 0; i < 64; i++) {
-        uint64_t square = setOn(0, i);
-       arrKnightAttacks[i] = knightAttacks(square);
-       arrKingAttacks[i] = kingAttacks(square);
-    }
+   for (int i = 0; i < 64; i++) {
+      uint64_t square = setOn(0, i);
+      arrKnightAttacks[i] = knightAttacks(square);
+      arrKingAttacks[i] = kingAttacks(square);
+   }
+
+    initRay(NORTH,0,1);
+   initRay(NORTHEAST,1,1);
+   initRay(EAST,1,0);
+   initRay(SOUTHEAST,1,-1);
+   initRay(SOUTH,0,-1);
+   initRay(SOUTHWEST,-1,-1);
+   initRay(WEST,-1,0);
+   initRay(NORTHWEST,-1,1);
 
 }

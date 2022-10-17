@@ -213,4 +213,5 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: \
  /opt/homebrew/Cellar/gcc/11.2.0_3/include/c++/11/bits/vector.tcc \
  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/Bitwise/pawns.h \
  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/Bitwise/bitscan.h \
- /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/Bitwise/tables.h
+ /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/Bitwise/tables.h \
+ /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/Bitwise/pieces.h

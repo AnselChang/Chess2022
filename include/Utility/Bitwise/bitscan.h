@@ -33,3 +33,19 @@ inline int bitScanForwardWithReset(uint64_t &bb) { // also called dropForward
     return idx;
 }
 
+/**
+ * bitScanReverse
+ * @authors Kim Walisch, Mark Dickinson
+ * @param bb bitboard to scan
+ * @precondition bb != 0
+ * @return index (0..63) of most significant one bit
+ */
+inline int bitScanReverse(uint64_t bb) {
+   bb |= bb >> 1; 
+   bb |= bb >> 2;
+   bb |= bb >> 4;
+   bb |= bb >> 8;
+   bb |= bb >> 16;
+   bb |= bb >> 32;
+   return index64[(bb * debruijn64) >> 58];
+}

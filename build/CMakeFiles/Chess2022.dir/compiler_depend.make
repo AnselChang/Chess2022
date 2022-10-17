@@ -628,7 +628,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   /opt/homebrew/Cellar/gcc/11.2.0_3/include/c++/11/bits/vector.tcc \
   ../include/Utility/Bitwise/pawns.h \
   ../include/Utility/Bitwise/bitscan.h \
-  ../include/Utility/Bitwise/tables.h
+  ../include/Utility/Bitwise/tables.h \
+  ../include/Utility/Bitwise/pieces.h
 
 
 /opt/homebrew/Cellar/gcc/11.2.0_3/include/c++/11/bits/stl_bvector.h:
@@ -890,6 +891,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
 /opt/homebrew/Cellar/gcc/11.2.0_3/include/c++/11/aarch64-apple-darwin20/bits/cpu_defines.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/AvailabilityVersions.h:
+
+../include/Utility/Bitwise/pieces.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_u_int16_t.h:
 

@@ -20,6 +20,11 @@ static uint64_t setOff(uint64_t bb, int k) {
     return bb & ~(1UL << k);
 }
 
+// get singly populated bitboard at location
+static uint64_t getSingle(int k) {
+    return setOn(0ULL, k);
+}
+
 static void print(uint64_t bb) {
     for (int y = 7; y >= 0; y--) {
         std::cout << "\n";

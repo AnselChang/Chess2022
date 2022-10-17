@@ -43,7 +43,7 @@ public:
     std::array<std::array<uint64_t, NUM_PIECES>, 2> pieces;
     std::array<uint64_t, 2> all;
     uint64_t empty;
-    uint64_t epSquare; // en pessant square, for when previous move was a double pawn jump
+    int ep = -1; // en pessant square, for when previous move was a double pawn jump
 
     Color turn;
     Color otherTurn;

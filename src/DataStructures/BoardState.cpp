@@ -49,7 +49,7 @@ BoardState::BoardState(std::string fen) {
         queensideCastling[BLACK] = castling.find('q') != std::string::npos;
     }
 
-    epSquare = 0;
+    ep = -1;
 
     recalculateAll();
 

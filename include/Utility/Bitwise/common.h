@@ -21,7 +21,7 @@ static uint64_t setOff(uint64_t bb, int k) {
 }
 
 // get singly populated bitboard at location
-static uint64_t getSingle(int k) {
+inline uint64_t getSingle(int k) {
     return setOn(0ULL, k);
 }
 

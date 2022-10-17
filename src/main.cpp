@@ -38,7 +38,7 @@ int main() {
 
     //test_perft(3);
 
-    Game game("rnbqkbnr/p2p4/4p1pp/Bpp2p2/5P2/3P1NP1/PPP1P2P/RN1QKB1R w KQkq - 0 7");
+    Game game("rnbqkbnr/p7/3pp1p1/Bpp2p1p/5P2/2NP1NP1/PPPQP1BP/R3K2R w KQkq - 1 9");
     std::vector<Move> moves = generateMoves(game.getBoard());
     for (const Move& move : moves) {
         std::cout << move << std::endl;

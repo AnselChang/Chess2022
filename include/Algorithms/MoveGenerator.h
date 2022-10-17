@@ -29,22 +29,24 @@ void generatePawnPushes(const BoardState& board, std::vector<Move>& moves) {
 }
 
 void generatePawnAttacks(const BoardState& board, std::vector<Move>& moves) {
-    uint64_t capturesLeft, capturesRight;
-    int delta;
-    if (board.turn == WHITE) {
-        delta = -8;
-        uint64_t capturable = board.all[BLACK] | board.epSquare; // en pessant square is a "capturable" square
-        capturesRight = wPawnEastAttacks(board.pieces[WHITE][PAWN]) & capturable;
-        capturesLeft = wPawnWestAttacks(board.pieces[WHITE][PAWN]) & capturable;
 
+    int delta = board.turn == WHITE ? -8 : 8;
+    
+    uint64_t east = board.turn == WHITE ? wPawnEastAttacks(board.pieces[board.turn][PAWN]) : bPawnEastAttacks(board.pieces[board.turn][PAWN]);
+    uint64_t west = board.turn == WHITE ? wPawnWestAttacks(board.pieces[board.turn][PAWN]) : bPawnWestAttacks(board.pieces[board.turn][PAWN]);
 
+    // En pessant to the east
+    if (east & board.ep != -1) {
+        moves.emplace_back(board.ep - 1 + delta, board.ep, EN_PESSANT);
     }
-    else {
-        delta = 8;
-        uint64_t capturable = board.all[WHITE] | board.epSquare;
-        capturesRight = bPawnEastAttacks(board.pieces[BLACK][PAWN]) & capturable;
-        capturesLeft = bPawnWestAttacks(board.pieces[BLACK][PAWN]) & capturable;
+    // En pessant to the west
+    if (west & board.ep != -1) {
+        moves.emplace_back(board.ep + 1 + delta, board.ep, EN_PESSANT);
     }
+
+    uint64_t capturable = board.all[board.otherTurn];
+    uint64_t capturesRight = east & capturable;
+    uint64_t capturesLeft = west & capturable;
 
     while (capturesRight != 0) {
         int index = bitScanForwardWithReset(capturesRight);
@@ -132,9 +134,31 @@ void generateSlidingMoves(const BoardState& board, std::vector<Move>& moves) {
 
 }
 
+void generateCastlingMoves(const BoardState& board, std::vector<Move>& moves) {
+
+    int king = defaultKing[board.turn];
+
+    // Check if kingside castle is legal
+    if (board.kingsideCastling[board.turn]) {
+
+        // If true, king and rook are in original places. Check only for collision with in-between squares
+        if ((kingsideCastlingSquares[board.turn] & (board.all[WHITE] + board.all[BLACK])) == 0) {
+            moves.emplace_back(king, king + 2, CASTLE);
+        }
+    }
+
+    // Check if queenside castle is legal
+    if (board.queensideCastling[board.turn]) {
+        // If true, king and rook are in original places. Check only for collision with in-between squares
+
+        if ((queensideCastlingSquares[board.turn] & (board.all[WHITE] + board.all[BLACK])) == 0) {
+            moves.emplace_back(king, king - 3, CASTLE);
+        }
+    }
+}
+
 std::vector<Move> generateMoves(const BoardState& board) {
     std::vector<Move> moves;
-
 
     
     generatePawnPushes(board, moves);
@@ -142,6 +166,7 @@ std::vector<Move> generateMoves(const BoardState& board) {
     generateKnightMoves(board, moves);
     generateKingMoves(board, moves);
     generateSlidingMoves(board, moves);
+    generateCastlingMoves(board, moves);
 
     return moves; // RVO
 

@@ -5,25 +5,28 @@ void updateBoardWithMove(BoardState& board, const Move& move) {
 
     ColorPiece movingPiece = board.pieceAt(move.from);
     ColorPiece capturedPiece = board.pieceAt(move.to);
-    setOff(board.pieces[board.otherTurn][capturedPiece.piece], move.from); // Remove captured piece, if any
+    setOff(board.pieces[board.otherTurn][capturedPiece.piece], move.to); // Remove captured piece, if any
     setOff(board.pieces[board.turn][movingPiece.piece], move.from); // Remove piece from old square
     setOn(board.pieces[board.turn][movingPiece.piece], move.to); // Move to new square
 
     // Handle en pessant
     if (move.type == EN_PESSANT) {
-        int capturedSquare = move.to - board.turn == WHITE ? 8 : -8;
+        int capturedSquare = move.to - (board.turn == WHITE ? 8 : -8);
         setOff(board.pieces[board.otherTurn][PAWN], capturedSquare);
         board.ep = -1; // reset
 
     } else if (move.type == CASTLE) {
+        std::cout << "castle" << std::endl;
 
         // Handle moving rook. We know rook old position since castling is legal
 
         int rookFrom, rookTo;
-        if (move.from % 8 == 2) { // castle queenside.
+        if (move.to % 8 == 2) { // castle queenside.
+            std::cout << "queenside" << std::endl;
             rookFrom = board.turn == WHITE ? 0 : 56; // Remove rook from A file
             rookTo = board.turn == WHITE ? 3 : 59; // Add rook to D file
-        } else if (move.from % 8 == 6) { // castle king side. Remove rook from h file
+        } else if (move.to % 8 == 6) { // castle king side. Remove rook from h file
+        std::cout << "kingside" << std::endl;
             rookFrom = board.turn == WHITE ? 7 : 63; //  Remove rook from H file
             rookTo = board.turn == WHITE ? 5 : 61; // Add rook to F file
         } else {
@@ -38,13 +41,18 @@ void updateBoardWithMove(BoardState& board, const Move& move) {
     }
 
     // Update castling flags. If rook is not where it started, set to false
-    if ( (board.pieces[board.turn][ROOK] & getSingleC(board.turn == WHITE ? 0 : 56)) == 0 ) {
+    if ( (board.pieces[board.turn][ROOK] & getSingle(board.turn == WHITE ? 0 : 56)) == 0 ) {
         board.queensideCastling[board.turn] = false;
     }
-    if ( (board.pieces[board.turn][ROOK] & getSingleC(board.turn == WHITE ? 7 : 63)) == 0 ) {
+    if ( (board.pieces[board.turn][ROOK] & getSingle(board.turn == WHITE ? 7 : 63)) == 0 ) {
+        board.kingsideCastling[board.turn] = false;
+    }
+    if (board.pieces[board.turn][KING] != getSingleC(board.turn == WHITE ? 4 : 60)) {
+        board.queensideCastling[board.turn] = false;
         board.kingsideCastling[board.turn] = false;
     }
 
+    std::swap(board.turn, board.otherTurn);
     board.recalculateAll();
 
 }

@@ -422,6 +422,7 @@ CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/Utility/constants.h
+ /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Square.h
 
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/DataStructures/Game.cpp
@@ -845,8 +846,8 @@ CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/Utility/constants.h
- /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Move.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Square.h
+ /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Move.h
 
 CMakeFiles/Chess2022.dir/src/main.cpp.o
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/src/main.cpp
@@ -1269,9 +1270,9 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/array
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/Utility/Bitwise/common.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/Utility/constants.h
+ /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Square.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Game.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Move.h
- /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/DataStructures/Square.h
  /Users/anselchang/Library/Mobile Documents/com~apple~CloudDocs/Personal Projects/Chess2022/include/Algorithms/MoveGenerator.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer

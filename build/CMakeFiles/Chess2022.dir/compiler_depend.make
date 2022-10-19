@@ -420,7 +420,8 @@ CMakeFiles/Chess2022.dir/src/DataStructures/BoardState.cpp.o: ../src/DataStructu
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  ../include/Utility/constants.h
+  ../include/Utility/constants.h \
+  ../include/DataStructures/Square.h
 
 CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o: ../src/DataStructures/Game.cpp \
   ../include/DataStructures/Game.h \
@@ -843,8 +844,8 @@ CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o: ../src/DataStructures/Ga
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   ../include/Utility/constants.h \
-  ../include/DataStructures/Move.h \
-  ../include/DataStructures/Square.h
+  ../include/DataStructures/Square.h \
+  ../include/DataStructures/Move.h
 
 CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/iostream \
@@ -1266,9 +1267,9 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/array \
   ../include/Utility/Bitwise/common.h \
   ../include/Utility/constants.h \
+  ../include/DataStructures/Square.h \
   ../include/DataStructures/Game.h \
   ../include/DataStructures/Move.h \
-  ../include/DataStructures/Square.h \
   ../include/Algorithms/MoveGenerator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer \

@@ -33,23 +33,27 @@ BoardState::BoardState(std::string fen) {
         kingsideCastling = {true, true};
         queensideCastling = {true, true};
         turn = WHITE;
+        ep = -1;
     } else {
 
         // Calculate who's turn
         i++; // i now at w or b
         turn = (fen.at(i) == 'w') ? WHITE : BLACK;
         otherTurn = (Color) ((turn + 1) % 2);
-        i++; // i now at castling
+        i += 2; // i now at castling
 
         // Calculate castling
-        std::string castling = fen.substr(i, fen.find(" ", i)); // substring of just the castling portion
+        int indexBeforeEP = fen.find(" ", i);
+        std::string castling = fen.substr(i, indexBeforeEP - i); // substring of just the castling portion
         kingsideCastling[WHITE] = castling.find('K') != std::string::npos;
         queensideCastling[WHITE] = castling.find('Q') != std::string::npos;
         kingsideCastling[BLACK] = castling.find('k') != std::string::npos;
         queensideCastling[BLACK] = castling.find('q') != std::string::npos;
-    }
 
-    ep = -1;
+        std::string epSquare = fen.substr(indexBeforeEP+1, fen.find(" ", indexBeforeEP+1) - indexBeforeEP - 1);
+        if (epSquare.at(0) == '-') ep = -1;
+        else ep = Square(epSquare).id;
+    }
 
     recalculateAll();
 

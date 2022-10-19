@@ -35,12 +35,14 @@ void generatePawnAttacks(const BoardState& board, std::vector<Move>& moves) {
     uint64_t east = board.turn == WHITE ? wPawnEastAttacks(board.pieces[board.turn][PAWN]) : bPawnEastAttacks(board.pieces[board.turn][PAWN]);
     uint64_t west = board.turn == WHITE ? wPawnWestAttacks(board.pieces[board.turn][PAWN]) : bPawnWestAttacks(board.pieces[board.turn][PAWN]);
 
+    uint64_t ep = getSingle(board.ep);
+
     // En pessant to the east
-    if ((east & board.ep) != -1) {
+    if ((east & ep) != 0) {
         moves.emplace_back(board.ep - 1 + delta, board.ep, EN_PESSANT);
     }
     // En pessant to the west
-    if ((west & board.ep) != -1) {
+    if ((west & ep) != 0) {
         moves.emplace_back(board.ep + 1 + delta, board.ep, EN_PESSANT);
     }
 

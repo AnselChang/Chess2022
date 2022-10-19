@@ -28,6 +28,8 @@ void test_perft(int depth) {
 
 int main() {
 
+    using namespace std;
+
     initLookupTables();
 
     //BoardState b;
@@ -38,10 +40,15 @@ int main() {
 
     //test_perft(3);
 
-    Game game("rnbqkbnr/p7/3pp1p1/Bpp2p1p/5P2/2NP1NP1/PPPQP1BP/R3K2R w KQkq - 1 9");
-    std::vector<Move> moves = generateMoves(game.getBoard());
-    for (const Move& move : moves) {
-        std::cout << move << std::endl;
-    }
+    Game game("rnbqkbnr/1pppp1pp/p7/4Pp2/8/8/PPPP1PPP/RNBQKBNR w KQkq f6 0 3");
+    cout << game << endl;
+
+    // for (const Move& m : generateMoves(game.getBoard())) {
+    //     cout << m << endl;
+    // }
+
+    game.makeMove(Move(Square("e5"), Square("f6"), EN_PESSANT));
+    cout << game << endl;
+
     
 }

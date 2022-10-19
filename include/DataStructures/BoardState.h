@@ -3,6 +3,7 @@
 #include <array>
 #include "Utility/Bitwise/common.h"
 #include "Utility/constants.h"
+#include "DataStructures/Square.h"
 
 class BoardState {
 
@@ -38,6 +39,7 @@ public:
         if (boardState.queensideCastling[WHITE]) os << "Q";
         if (boardState.kingsideCastling[BLACK]) os << "k";
         if (boardState.queensideCastling[BLACK]) os << "q";
+        os << "\nEn pessant: " << (boardState.ep == -1 ? "None" : Square(boardState.ep).getName()) << "\n";
         os << "\n" << (boardState.turn == WHITE ? "White" : "Black") << " to move" << std::endl;
         return os;
     }

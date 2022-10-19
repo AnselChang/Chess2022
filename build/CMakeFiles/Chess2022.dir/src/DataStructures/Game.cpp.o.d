@@ -420,5 +420,5 @@ CMakeFiles/Chess2022.dir/src/DataStructures/Game.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/Utility/constants.h \
-  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Move.h \
-  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Square.h
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Square.h \
+  /Users/anselchang/Library/Mobile\ Documents/com~apple~CloudDocs/Personal\ Projects/Chess2022/include/DataStructures/Move.h

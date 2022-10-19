@@ -29,6 +29,12 @@ public:
         }
     }
 
+    // Overload printing
+    friend std::ostream& operator<<(std::ostream& os, const Game& game) {
+        os << game.current->board;
+        return os;
+    }
+
 private:
     typedef struct GameState {
         BoardState board;

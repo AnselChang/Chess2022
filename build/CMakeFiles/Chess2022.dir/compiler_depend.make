@@ -1270,7 +1270,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/DataStructures/Square.h \
   ../include/DataStructures/Game.h \
   ../include/DataStructures/Move.h \
-  ../include/Algorithms/MoveGenerator.h \
+  ../include/Algorithms/LegalMoveGenerator.h \
+  ../include/Algorithms/PseudoLegalMoveGenerator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer \
   ../include/Utility/Bitwise/pawns.h \
@@ -1289,7 +1290,9 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector:
 
-../include/Algorithms/MoveGenerator.h:
+../include/Algorithms/PseudoLegalMoveGenerator.h:
+
+../include/Algorithms/LegalMoveGenerator.h:
 
 ../include/DataStructures/Move.h:
 

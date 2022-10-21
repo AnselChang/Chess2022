@@ -27,6 +27,14 @@ uint64_t kingAttacks(uint64_t kingSet) {
 }
 uint64_t arrKingAttacks[64];
 
+uint64_t pawnAttacksNorth(uint64_t kingSet) {
+   return noEaOne(kingSet) | noWeOne(kingSet);
+}
+uint64_t pawnAttacksSouth(uint64_t kingSet) {
+   return soEaOne(kingSet) | soWeOne(kingSet);
+}
+uint64_t arrPawnAttacks[2][64];
+
 // Initialize rays from specified direction. Bruteforce
 uint64_t rayAttacks[8][64];
 void initRay(Direction direction, int dx, int dy) {
@@ -60,6 +68,8 @@ void initLookupTables() {
       uint64_t square = getSingle(i);
       arrKnightAttacks[i] = knightAttacks(square);
       arrKingAttacks[i] = kingAttacks(square);
+      arrPawnAttacks[0][i] = pawnAttacksNorth(square);
+      arrPawnAttacks[1][i] = pawnAttacksSouth(square);
    }
 
     initRay(NORTH,0,1);

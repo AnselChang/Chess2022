@@ -23,7 +23,11 @@ BoardState::BoardState(std::string fen) {
             x += c - 48;
         } else { // if a piece, figure out which color and piece it is, and set corresponding bit
             ColorPiece cp(c);
-            setOn(pieces[cp.color][cp.piece], y*8 + x);
+            int location = y*8 + x;
+
+            if (cp.piece == KING) kings[cp.color] = location;
+
+            setOn(pieces[cp.color][cp.piece], location);
             x += 1;
         }
         i += 1;

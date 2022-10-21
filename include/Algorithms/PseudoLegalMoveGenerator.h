@@ -159,7 +159,7 @@ void generateCastlingMoves(const BoardState& board, std::vector<Move>& moves) {
     }
 }
 
-std::vector<Move> generateMoves(const BoardState& board) {
+std::vector<Move> generatePseudoLegalMoves(const BoardState& board) {
     std::vector<Move> moves;
 
     

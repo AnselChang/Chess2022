@@ -40,6 +40,9 @@ void updateBoardWithMove(BoardState& board, const Move& move) {
         board.ep = (move.from + move.to) / 2;
     }
 
+    // Move king cached position if king is moved
+    if (movingPiece.piece == KING) board.kings[board.turn] = move.to;
+
     // Update castling flags. If rook is not where it started, set to false
     if ( (board.pieces[board.turn][ROOK] & getSingle(board.turn == WHITE ? 0 : 56)) == 0 ) {
         board.queensideCastling[board.turn] = false;

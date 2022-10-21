@@ -53,5 +53,6 @@ public:
     Color otherTurn;
     std::array<bool, 2> queensideCastling;
     std::array<bool, 2> kingsideCastling;
+    std::array<int, 2> kings;
 
 };

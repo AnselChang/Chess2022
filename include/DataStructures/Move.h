@@ -1,13 +1,16 @@
 #pragma once
 
 #include "Square.h"
+#include "Utility/constants.h"
 
-enum MoveType {NORMAL, EN_PESSANT, CASTLE};
+enum MoveType {NORMAL, EN_PESSANT, CASTLE, PROMOTION};
 
 typedef struct Move {
 
     int from, to;
     MoveType type;
+
+    Piece promotionPiece = PIECE_ERROR;
 
     Move(int f, int t, MoveType moveType = NORMAL): from(f), to(t), type(moveType) {}
     Move(Square f, Square t, MoveType moveType = NORMAL): from(f.id), to(t.id), type(moveType) {}
@@ -22,6 +25,9 @@ typedef struct Move {
                 break;
             case EN_PESSANT:
                 os << "En pessant";
+                break;
+            case PROMOTION:
+                os << "Promotion";
                 break;
             default:
                 os << "Castle";

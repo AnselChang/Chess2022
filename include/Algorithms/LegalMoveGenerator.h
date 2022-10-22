@@ -59,7 +59,7 @@ std::vector<Move> generateLegalMoves(Game& game) {
 
         if (isLegal(game.getBoard())) iter++;
         else {
-            std::cout << "Illegal: " << *iter << std::endl;
+            //std::cout << "Illegal: " << *iter << std::endl;
             iter = moves.erase(iter);
         }
 

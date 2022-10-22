@@ -9,17 +9,28 @@
 #include "Utility/Bitwise/tables.h"
 #include "Utility/Bitwise/pieces.h"
 
+inline bool isPromotion(Color turn, int index) {
+    if (turn == WHITE) return index >= 56;
+    return index < 8;
+}
+
+// With the pawn moving to the 8th rank, generate all possible promotions
+void generatePromotions(int indexFrom, int indexTo, std::vector<Move>& moves) {
+    for (Piece p : {QUEEN, ROOK, BISHOP, KNIGHT}) {
+        moves.emplace_back(indexFrom, indexTo, PROMOTION);
+        moves.back().promotionPiece = p;
+    }
+}
+
 void generatePawnPushes(const BoardState& board, std::vector<Move>& moves) {
     uint64_t singleTargets = board.turn == WHITE ? wSinglePushTargets(board.pieces[WHITE][PAWN], board.empty) : bSinglePushTargets(board.pieces[BLACK][PAWN], board.empty);
     uint64_t doubleTargets = board.turn == WHITE ? wDblPushTargets(board.pieces[WHITE][PAWN], board.empty) : bDblPushTargets(board.pieces[BLACK][PAWN], board.empty);
-    std::cout << board << std::endl;
-    print(singleTargets);
-    print(doubleTargets);
 
     int delta = board.turn == WHITE ? -8 : 8;
     while (singleTargets != 0) {
         int index = bitScanForwardWithReset(singleTargets);
-        moves.emplace_back(index + delta, index);
+        if (isPromotion(board.turn, index)) generatePromotions(index + delta, index, moves);
+        else moves.emplace_back(index + delta, index);
     }
 
     while (doubleTargets != 0) {
@@ -52,12 +63,14 @@ void generatePawnAttacks(const BoardState& board, std::vector<Move>& moves) {
 
     while (capturesRight != 0) {
         int index = bitScanForwardWithReset(capturesRight);
-        moves.emplace_back(index + delta - 1, index);
+        if (isPromotion(board.turn, index)) generatePromotions(index + delta - 1, index, moves);
+        else moves.emplace_back(index + delta - 1, index);
     }
 
     while (capturesLeft != 0) {
         int index = bitScanForwardWithReset(capturesLeft);
-        moves.emplace_back(index + delta + 1, index);
+        if (isPromotion(board.turn, index)) generatePromotions(index + delta + 1, index, moves);
+        else moves.emplace_back(index + delta + 1, index);
     }
 }
 
@@ -154,7 +167,7 @@ void generateCastlingMoves(const BoardState& board, std::vector<Move>& moves) {
         // If true, king and rook are in original places. Check only for collision with in-between squares
 
         if ((queensideCastlingSquares[board.turn] & (board.all[WHITE] + board.all[BLACK])) == 0) {
-            moves.emplace_back(king, king - 3, CASTLE);
+            moves.emplace_back(king, king - 2, CASTLE);
         }
     }
 }

@@ -3,30 +3,32 @@
 
 void updateBoardWithMove(BoardState& board, const Move& move) {
 
+    board.ep = -1; // reset en pessant square. Only overwritten on double pawn jump
+
     ColorPiece movingPiece = board.pieceAt(move.from);
     ColorPiece capturedPiece = board.pieceAt(move.to);
     setOff(board.pieces[board.otherTurn][capturedPiece.piece], move.to); // Remove captured piece, if any
     setOff(board.pieces[board.turn][movingPiece.piece], move.from); // Remove piece from old square
-    setOn(board.pieces[board.turn][movingPiece.piece], move.to); // Move to new square
+
+    if (move.type == PROMOTION) {
+        setOn(board.pieces[board.turn][move.promotionPiece], move.to); // Move to new square
+    } else {
+        setOn(board.pieces[board.turn][movingPiece.piece], move.to); // Move to new square
+    }
 
     // Handle en pessant
     if (move.type == EN_PESSANT) {
         int capturedSquare = move.to - (board.turn == WHITE ? 8 : -8);
         setOff(board.pieces[board.otherTurn][PAWN], capturedSquare);
-        board.ep = -1; // reset
 
     } else if (move.type == CASTLE) {
-        std::cout << "castle" << std::endl;
 
         // Handle moving rook. We know rook old position since castling is legal
-
         int rookFrom, rookTo;
         if (move.to % 8 == 2) { // castle queenside.
-            std::cout << "queenside" << std::endl;
             rookFrom = board.turn == WHITE ? 0 : 56; // Remove rook from A file
             rookTo = board.turn == WHITE ? 3 : 59; // Add rook to D file
         } else if (move.to % 8 == 6) { // castle king side. Remove rook from h file
-        std::cout << "kingside" << std::endl;
             rookFrom = board.turn == WHITE ? 7 : 63; //  Remove rook from H file
             rookTo = board.turn == WHITE ? 5 : 61; // Add rook to F file
         } else {

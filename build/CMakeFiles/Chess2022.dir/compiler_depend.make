@@ -1277,7 +1277,9 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/Utility/Bitwise/pawns.h \
   ../include/Utility/Bitwise/bitscan.h \
   ../include/Utility/Bitwise/tables.h \
-  ../include/Utility/Bitwise/pieces.h
+  ../include/Utility/Bitwise/pieces.h \
+  ../include/AI/Computer.h \
+  ../include/AI/Random.h
 
 
 ../include/Utility/Bitwise/pieces.h:
@@ -1854,6 +1856,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/allocator_arg_t.h:
 
+../include/AI/Computer.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/machine/_mcontext.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/concepts:
@@ -1909,6 +1913,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/nl_types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__iterator/iter_swap.h:
+
+../include/AI/Random.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_id_t.h:
 

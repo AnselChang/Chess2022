@@ -15,6 +15,10 @@ typedef struct Move {
     Move(int f, int t, MoveType moveType = NORMAL): from(f), to(t), type(moveType) {}
     Move(Square f, Square t, MoveType moveType = NORMAL): from(f.id), to(t.id), type(moveType) {}
 
+    std::string getName() const {
+        return Square(from).getName() + Square(to).getName();
+    }
+
 
     // Overload printing
     friend std::ostream& operator<<(std::ostream& os, const Move& move) {

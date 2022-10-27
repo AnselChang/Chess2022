@@ -3,7 +3,6 @@
 #include <cstdlib>
 
 #include "Computer.h"
-#include "Algorithms/LegalMoveGenerator.h"
 
 class Random : public Computer {
 public:

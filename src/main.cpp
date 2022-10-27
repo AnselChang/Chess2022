@@ -48,17 +48,15 @@ Color userSelectColor() {
 
 }
 
-const Move getLegalUserMove(Game& game) {
+const Move getLegalUserMove(Game& game, std::vector<Move>& legalMoves) {
     using namespace std;
-
-    std::vector<Move> moves = generateLegalMoves(game);
 
     std::string input;
     while (true) {
         cout << "Enter valid move: " << endl;
         cin >> input;
 
-        for (const Move& move : moves) {
+        for (const Move& move : legalMoves) {
             if (move.getName() == input) return move;
         }
         
@@ -70,7 +68,7 @@ void playUserAgainstComputer(Computer* computer) {
 
     using namespace std;
 
-    Game game;
+    Game game("4k3/4P3/4K3/8/8/8/8/8 b - - 0 1");
 
     Color userColor = userSelectColor();
 
@@ -78,12 +76,29 @@ void playUserAgainstComputer(Computer* computer) {
 
     while (true) { // game termination
 
+        std::vector<Move> legalMoves = generateLegalMoves(game);
+
         if (game.getBoard().turn == userColor) { // User's turn
-            const Move userMove = getLegalUserMove(game);
+            
+            if (legalMoves.size() == 0) {
+
+                if (!isCurrentKingInCheck(game)) cout << "Stalemate." << endl;
+                else cout << "Checkmate. Computer (" << (userColor == WHITE ? "Black" : "White") << ") wins!" << endl;
+                break;
+            }
+
+            const Move userMove = getLegalUserMove(game, legalMoves);
             game.makeMove(userMove);
             cout << game << "\n" << "You moved: " << userMove << endl;
         }
         else {
+
+            if (legalMoves.size() == 0) {
+
+                if (!isCurrentKingInCheck(game)) cout << "Stalemate." << endl;
+                else cout << "Checkmate. You (" << (userColor == WHITE ? "White" : "Black") << ") win!" << endl;
+                break;
+            }
 
             const Move computerMove = computer->search(game);
             game.makeMove(computerMove);

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "DataStructures/Game.h"
+#include "Algorithms/LegalMoveGenerator.h"
+#include "Algorithms/PseudoLegalMoveGenerator.h"
 
 // interface
 class Computer {

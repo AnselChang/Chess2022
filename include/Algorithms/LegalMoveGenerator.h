@@ -48,6 +48,17 @@ bool isLegal(const BoardState& boardState) {
 
 }
 
+bool isCurrentKingInCheck(Game& game) {
+    BoardState& bs = const_cast<BoardState&>(game.getBoard());
+    std::swap(bs.turn, bs.otherTurn);
+    
+    bool inCheck = !isLegal(bs);
+    std::swap(bs.turn, bs.otherTurn);
+
+    return inCheck;
+
+}
+
 // Generate pseudo-legal moves, and then remove non-legal moves from move list
 std::vector<Move> generateLegalMoves(Game& game) {
 

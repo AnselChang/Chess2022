@@ -4,6 +4,7 @@ enum Direction {NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTH
 
 enum Piece {PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING, PIECE_ERROR};
 constexpr int NUM_PIECES = 6;
+const float PieceEvaluation[7] = {1, 3, 3, 5, 9, 0, 0};
 
 enum Color {WHITE, BLACK, COLOR_ERROR};
 
@@ -77,6 +78,11 @@ typedef struct ColorPiece {
         if (color == BLACK) c += 32;
 
         return c;
+    }
+
+    // Positive if white, negative if black, 0 if none
+    float getEval() {
+        return PieceEvaluation[piece] * (color == WHITE ? 1 : -1);
     }
 
     // Overload printing

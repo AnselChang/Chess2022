@@ -7,6 +7,9 @@ void updateBoardWithMove(BoardState& board, const Move& move) {
 
     ColorPiece movingPiece = board.pieceAt(move.from);
     ColorPiece capturedPiece = board.pieceAt(move.to);
+
+    board.relEval -= capturedPiece.getEval();
+
     setOff(board.pieces[board.otherTurn][capturedPiece.piece], move.to); // Remove captured piece, if any
     setOff(board.pieces[board.turn][movingPiece.piece], move.from); // Remove piece from old square
 
@@ -18,6 +21,7 @@ void updateBoardWithMove(BoardState& board, const Move& move) {
 
     // Handle en pessant
     if (move.type == EN_PESSANT) {
+        board.relEval -= PieceEvaluation[PAWN] * (board.otherTurn == WHITE ? 1 : -1);
         int capturedSquare = move.to - (board.turn == WHITE ? 8 : -8);
         setOff(board.pieces[board.otherTurn][PAWN], capturedSquare);
 
@@ -64,6 +68,8 @@ void updateBoardWithMove(BoardState& board, const Move& move) {
 
 // Precondition: assume that move is valid (check happened already)
 void Game::makeMove(const Move& move) {
+
+    numMoves++;
     
     // create a copy of current gamestate for new gamestate
     GameState* newState = new GameState(*current);
@@ -79,6 +85,9 @@ void Game::makeMove(const Move& move) {
 // Pop the top of the linked list and shift back game state pointer by 1 to previous move
 void Game::unmakeMove() {
     assert(current != nullptr);
+
+    numMoves--;
+
     GameState* previous = current->prev;
     delete current;
     current = previous;

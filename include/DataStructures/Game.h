@@ -8,6 +8,8 @@ class Game {
 
 public:
 
+    int numMoves = 0;
+
     Game(std::string fen) {
         current = new GameState(BoardState(fen));
     }

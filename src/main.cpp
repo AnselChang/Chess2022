@@ -7,6 +7,7 @@
 #include "Utility/Bitwise/tables.h"
 #include "AI/Computer.h"
 #include "AI/Random.h"
+#include "AI/Greedy.h"
 
 // Return the number of possible positions given a starting position and a depth
 long long perft(Game& game, int depth) {
@@ -68,7 +69,7 @@ void playUserAgainstComputer(Computer* computer) {
 
     using namespace std;
 
-    Game game("4k3/4P3/4K3/8/8/8/8/8 b - - 0 1");
+    Game game;
 
     Color userColor = userSelectColor();
 
@@ -78,14 +79,8 @@ void playUserAgainstComputer(Computer* computer) {
 
         std::vector<Move> legalMoves = generateLegalMoves(game);
 
-        if (game.getBoard().turn == userColor) { // User's turn
+        if (game.getBoard().turn == userColor) { // User's turn  
             
-            if (legalMoves.size() == 0) {
-
-                if (!isCurrentKingInCheck(game)) cout << "Stalemate." << endl;
-                else cout << "Checkmate. Computer (" << (userColor == WHITE ? "Black" : "White") << ") wins!" << endl;
-                break;
-            }
 
             const Move userMove = getLegalUserMove(game, legalMoves);
             game.makeMove(userMove);
@@ -93,21 +88,75 @@ void playUserAgainstComputer(Computer* computer) {
         }
         else {
 
-            if (legalMoves.size() == 0) {
-
-                if (!isCurrentKingInCheck(game)) cout << "Stalemate." << endl;
-                else cout << "Checkmate. You (" << (userColor == WHITE ? "White" : "Black") << ") win!" << endl;
-                break;
-            }
-
             const Move computerMove = computer->search(game);
             game.makeMove(computerMove);
             cout << game << "\n" << "Computer moved: " << computerMove << endl;
 
         }
 
+        if (legalMoves.size() == 0) {
+
+            if (!isCurrentKingInCheck(game)) cout << "Stalemate." << endl;
+            else cout << "Checkmate. " << (game.getBoard().turn == WHITE ? "Black" : "White") << " wins!" << endl;
+            break;
+        }
+
     }
 
+}
+
+// Simulate a game between two computers
+// Return 1 if white (computer 1) wins, 0 if tie, -1 if black (computer 2) wins
+int playTwoComputers(Computer* one, Computer* two, bool verbose = true) {
+
+    using namespace std;
+
+    Game game;
+
+    string pgn;
+
+    // Simulate game
+    while (generateLegalMoves(game).size() > 0 && game.numMoves <= 50) {
+
+        if (game.getBoard().turn == WHITE) pgn += to_string(game.numMoves/2+1) + ". ";
+
+        const Move move = (game.getBoard().turn == WHITE) ? one->search(game) : two->search(game);
+        game.makeMove(move);
+
+        pgn += move.getName() + " ";
+
+        if (verbose) {
+            cout << game << endl;
+            cout << move << endl;
+        }
+
+
+    }
+
+    if (verbose) cout << pgn << endl;
+
+    if (game.numMoves > 50) return 0;
+    else if (isCurrentKingInCheck(game)) return game.getBoard().turn == BLACK ? 1 : -1;
+    else return 0;
+
+}
+
+void simulateTwoComputers(Computer* one, Computer* two, int N = 100) {
+
+    using namespace std;
+
+    int whiteWins = 0;
+    int whiteTies = 0;
+    int whiteLosses = 0;
+    for (int i = 0; i < N; i++) {
+        int score = playTwoComputers(one, two, false);
+        if (score == 1) whiteWins++;
+        else if (score == 0) whiteTies++;
+        else whiteLosses--;
+    }
+    cout << "Wins: " << whiteWins << " (" << ((float) whiteWins) / N << "%)" << endl;
+    cout << "Draws: " << whiteTies << " (" << ((float) whiteTies) / N << "%)" << endl;
+    cout << "Losses: " << whiteLosses << " (" << ((float) whiteLosses) / N << "%)" << endl;
 }
 
 int main() {
@@ -127,9 +176,12 @@ int main() {
 
     //test_perft(6);
 
-    unique_ptr<Computer> computer = make_unique<Random>();
-    playUserAgainstComputer(computer.get());
+    srand(unsigned(time(NULL)));
 
+    unique_ptr<Computer> computer1 = make_unique<Random>();
+    unique_ptr<Computer> computer2 = make_unique<Greedy>();
+    simulateTwoComputers(computer1.get(), computer2.get());
+    //playTwoComputers(computer1.get(), computer2.get());
     // Game game("rnbq1bnr/pppppppp/8/4k3/1N2PRQ1/3KB2B/PPP1PPPP/RN6 b Aha - 0 1");
     // cout << game << endl;
 

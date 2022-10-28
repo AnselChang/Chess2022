@@ -1279,8 +1279,11 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/Utility/Bitwise/tables.h \
   ../include/Utility/Bitwise/pieces.h \
   ../include/AI/Computer.h \
-  ../include/AI/Random.h
+  ../include/AI/Random.h \
+  ../include/AI/Greedy.h
 
+
+../include/AI/Greedy.h:
 
 ../include/Utility/Bitwise/pieces.h:
 

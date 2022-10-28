@@ -23,6 +23,7 @@ public:
     void removePiece(ColorPiece cp, int location);
     void addPiece(ColorPiece cp, int location);
 
+
     std::array<uint64_t, NUM_PIECES>& myPieces() {return pieces[turn]; };
 
     // Overload printing
@@ -39,7 +40,7 @@ public:
         if (boardState.queensideCastling[WHITE]) os << "Q";
         if (boardState.kingsideCastling[BLACK]) os << "k";
         if (boardState.queensideCastling[BLACK]) os << "q";
-        os << "\nEn pessant: " << (boardState.ep == -1 ? "None" : Square(boardState.ep).getName()) << "\n";
+        os << "\nEvaluation: " << boardState.relEval;
         os << "\n" << (boardState.turn == WHITE ? "White" : "Black") << " to move" << std::endl;
         return os;
     }
@@ -48,6 +49,8 @@ public:
     std::array<uint64_t, 2> all;
     uint64_t empty;
     int ep = -1; // en pessant square, for when previous move was a double pawn jump
+
+    float relEval = 0; // relative evaluation
 
     Color turn;
     Color otherTurn;

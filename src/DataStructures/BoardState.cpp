@@ -6,8 +6,6 @@ BoardState::BoardState(std::string fen) {
         for (int j = 0; j < NUM_PIECES; j++)
             pieces[i][j] = 0;
 
-    std::cout << fen << std::endl;
-
     int y = 7;
     int x = 0;
 
@@ -96,3 +94,4 @@ void BoardState::removePiece(ColorPiece cp, int location) {
 void BoardState::addPiece(ColorPiece cp, int location) {
     setOn(pieces[cp.color][cp.piece], location);
 }
+

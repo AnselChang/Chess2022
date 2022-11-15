@@ -26,6 +26,7 @@ BoardState::BoardState(std::string fen) {
             if (cp.piece == KING) kings[cp.color] = location;
 
             setOn(pieces[cp.color][cp.piece], location);
+            relEval += (cp.color == WHITE ? 1 : -1) * PieceEvaluation[cp.piece];
             x += 1;
         }
         i += 1;
@@ -95,3 +96,6 @@ void BoardState::addPiece(ColorPiece cp, int location) {
     setOn(pieces[cp.color][cp.piece], location);
 }
 
+float BoardState::evaluate() const {
+    return relEval;
+}

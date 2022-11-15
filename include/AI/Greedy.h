@@ -17,7 +17,7 @@ public:
         for (Move& move : moves) {
             game.makeMove(move);
 
-            float eval = game.getBoard().relEval * (game.getBoard().turn == WHITE ? -1 : 1);
+            float eval = game.getBoard().evaluate();
             if (eval > bestEval) {
                 bestEval = eval;
                 bestMove = move;

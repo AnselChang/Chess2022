@@ -8,6 +8,8 @@
 #include "AI/Computer.h"
 #include "AI/Random.h"
 #include "AI/Greedy.h"
+#include "AI/AlphaBeta.h"
+#include "AI/Minimax.h"
 
 // Return the number of possible positions given a starting position and a depth
 long long perft(Game& game, int depth) {
@@ -69,7 +71,8 @@ void playUserAgainstComputer(Computer* computer) {
 
     using namespace std;
 
-    Game game;
+    Game game("8/4k3/3n4/8/8/8/3Q1K2/8 b - - 0 1");
+    //Game game;
 
     Color userColor = userSelectColor();
 
@@ -165,6 +168,8 @@ int main() {
 
     initLookupTables();
 
+    std::cout << (F_MIN) << std::endl;
+
     //BoardState b;
     //std::cout << b << std::endl;
     //std::cout << "start" << std::endl;
@@ -176,12 +181,13 @@ int main() {
 
     //test_perft(6);
 
-    srand(unsigned(time(NULL)));
+    srand(unsigned(time(NULL))); // randomize seed
 
-    unique_ptr<Computer> computer1 = make_unique<Random>();
-    unique_ptr<Computer> computer2 = make_unique<Greedy>();
+    unique_ptr<Computer> computer1 = make_unique<AlphaBeta>(3);
+    unique_ptr<Computer> computer2 = make_unique<Random>();
     simulateTwoComputers(computer1.get(), computer2.get());
-    //playTwoComputers(computer1.get(), computer2.get());
+    //playTwoComputers(computer2.get(), computer1.get());
+    //playUserAgainstComputer(computer1.get());
     // Game game("rnbq1bnr/pppppppp/8/4k3/1N2PRQ1/3KB2B/PPP1PPPP/RN6 b Aha - 0 1");
     // cout << game << endl;
 

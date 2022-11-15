@@ -23,6 +23,8 @@ public:
     void removePiece(ColorPiece cp, int location);
     void addPiece(ColorPiece cp, int location);
 
+    float evaluate() const;
+
 
     std::array<uint64_t, NUM_PIECES>& myPieces() {return pieces[turn]; };
 

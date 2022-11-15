@@ -1280,8 +1280,15 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/Utility/Bitwise/pieces.h \
   ../include/AI/Computer.h \
   ../include/AI/Random.h \
-  ../include/AI/Greedy.h
+  ../include/AI/Greedy.h \
+  ../include/AI/AlphaBeta.h \
+  ../include/Utility/limits.h \
+  ../include/AI/Minimax.h
 
+
+../include/AI/Minimax.h:
+
+../include/AI/AlphaBeta.h:
 
 ../include/AI/Greedy.h:
 
@@ -1458,6 +1465,8 @@ CMakeFiles/Chess2022.dir/src/main.cpp.o: ../src/main.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__algorithm/max.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__algorithm/sift_down.h:
+
+../include/Utility/limits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_time_t.h:
 
